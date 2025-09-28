@@ -1,9 +1,12 @@
 import React from 'react'
 import { FaTrash } from 'react-icons/fa'
 
+
 const Singleperson = ({ names, email, age, dob, time }) => {
   return (
-    <div className="p-5 shadow-md rounded-xl my-4 bg-white border border-gray-200 hover:shadow-lg transition duration-300">
+    <div
+  
+    className="p-5 popup shadow-md rounded-xl my-4 bg-white border border-gray-200 hover:shadow-lg transition duration-300">
       <div className="flex justify-between items-center">
 
       <h2 className="text-xl font-semibold  text-gray-800 mb-3 border-b pb-2">

@@ -1,6 +1,5 @@
 import React from 'react'
 import Minputs from './multiplecontinputs/Minputs'
-
 const App = () => {
   return (
     <>

@@ -4,6 +4,7 @@ import { Toaster, toast } from 'react-hot-toast'
 
 const Minputs = () => {
   const initialFields = {
+    id:'',
     names: '',
     email: '',
     age: '',
@@ -13,7 +14,6 @@ const Minputs = () => {
 
   const [formData, setFormData] = useState(initialFields)
   const [records, setRecords] = useState([])
-
   const { names, email, age, dob, time } = formData
 
   const handleInputs = (e) => {
@@ -35,6 +35,7 @@ const Minputs = () => {
       return
     }
 
+   
     
     setRecords([...records, formData])
     setFormData(initialFields)
@@ -44,6 +45,13 @@ const Minputs = () => {
       
     })
   }
+   const removeUsers = (id) =>{
+     let newpeople = records.filter((item,index)=>{
+      return item.id !== id 
+     })
+
+     setRecords(newpeople)
+    }
 
   return (
     <>
@@ -114,7 +122,7 @@ const Minputs = () => {
 
       <div className="container grid grid-cols-4 gap-3">
         {records.map((item, index) => (
-          <Singleperson {...item} key={index} />
+          <Singleperson {...item} remove={removeUsers} key={index} />
         ))}
       </div>
     </>

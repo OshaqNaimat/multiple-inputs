@@ -2,7 +2,7 @@ import React from 'react'
 import { FaTrash } from 'react-icons/fa'
 
 
-const Singleperson = ({ names, email, age, dob, time }) => {
+const Singleperson = ({ id,names, email, age, dob, time,remove }) => {
   return (
     <div
   
@@ -12,8 +12,10 @@ const Singleperson = ({ names, email, age, dob, time }) => {
       <h2 className="text-xl font-semibold  text-gray-800 mb-3 border-b pb-2">
         {names || "Unnamed"}
       </h2>
-  
-              <FaTrash className='text-xl  text-red-500 active:scale-90 duration-300 hover:text-red-600 cursor-pointer select-none' />
+       <button onClick={()=>remove(id)} className='text-xl  text-red-500 active:scale-90 duration-300 hover:text-red-600 cursor-pointer select-none'>
+
+              <FaTrash  />
+       </button>
       </div>
 
       
